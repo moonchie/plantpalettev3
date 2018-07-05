@@ -1,0 +1,19 @@
+<h4>Select a project to save</h4>
+
+<ul>
+    {{#each projects}}
+        <form method="POST" action="/plants/save/{{this._id}}">
+            <label>
+                <nav>{{this.projectName}}</nav>
+                <button>save</button>
+                <a href="/project/{{this._id}}">view more</a>
+            </label>
+
+            <input type="hidden" value="{{../plantID}}" name="plantID">
+        </form>
+
+
+    </nav>
+    {{/each}}
+
+</ul>

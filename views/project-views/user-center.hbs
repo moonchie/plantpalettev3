@@ -1,0 +1,60 @@
+
+
+
+{{!-- <ul>
+    {{#each projects}}
+    <h4 style="color:brown">Name of the project: {{this.projectName}}</h4>
+    <h4>Location: {{this.location}}</h4>
+    <p>Description of the projects: {{this.projectDescription}}</p>
+    <button><a href="/project/{{this._id}}">See details</a></button>
+    <button><a href="/project/{{this._id}}/delete">Delete</a></button>
+    <br />
+    <br />
+    {{/each}}
+</ul> --}}
+
+{{!-- EXAMPLE from https://mdbootstrap.com/sections/projects-sections/ --}}
+<!-- Projects section v.1 -->
+<section class="text-center my-5">
+<a href="/project/create"> Create New Project</a>
+
+  <!-- Section heading -->
+  <h2 class="h1-responsive font-weight-bold my-5">My Projects</h2>
+  <!-- Section description -->
+  <p class="grey-text w-responsive mx-auto mb-5">Look what we've done!</p>
+
+  <!-- Grid row -->
+  <div class="row text-center">
+
+
+{{#each projects}}
+
+    <!-- Grid column -->
+    <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+        <ul>
+            <!--Featured image-->
+            <div class="view overlay rounded z-depth-1">
+                <a href="/project/{{this._id}}">
+                <img src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2F1445458084%2FMIAMI1015-miami-beach-botanical-garden.jpg%3Fitok%3DE_gYacbU&q=85" class="img-fluid" alt="Sample project image">
+                <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+            <!--Excerpt-->
+            <div class="card-body pb-0">
+                <h4 class="font-weight-bold my-3">{{this.projectName}}</h4>
+                <p class="grey-text">{{this.projectDescription}}
+                </p>
+                <a href="/project/{{this._id}}" class="btn btn-indigo btn-sm"><i class="fa fa-clone left"></i>View project</a>
+                <a href="/project/{{this._id}}/delete" class="btn btn-indigo btn-sm"><i class="fa fa-clone left"></i>Delete</a>
+            </div>
+
+        </ul>
+
+    </div>
+    <!-- Grid column -->
+{{/each}}
+  </div>
+  <!-- Grid row -->
+
+</section>
+<!-- Projects section v.1 -->

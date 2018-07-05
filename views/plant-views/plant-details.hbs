@@ -1,0 +1,91 @@
+{{!-- <h2>{{plant.commonName}}</h2>
+
+<h4><i>{{plant.scientificName}}</i></h4>
+<img src="{{plant.pictureUrl}}" /> --}}
+{{!-- <h4>Zone: {{plant.zoneMin}} to {{Oneplant.zoneMax}}</h4>
+<p>Water: {{#each plant.water}}
+    {{this}}
+    {{/each}}
+</p> --}}
+{{!-- <p>Sun: {{#each plant.sun}}
+    {{this}}
+    {{/each}}
+</p> --}}
+{{!-- <p>Growth Rate: {{plant.growthRate}}</p> --}}
+{{!-- <p>Description: {{plant.info}}</p> --}}
+
+<body>
+
+<div class="container">
+<div class="card">
+	<div class="row">
+		<aside class="col-sm-5 border-right">
+<article class="gallery-wrap">
+<div class="img-big-wrap">
+  <div> <a href="#"><img src="{{plant.pictureUrl}}"></a></div>
+</div> <!-- slider-product.// -->
+<div class="img-small-wrap">
+  <div class="item-gallery"> <img src="{{plant.pictureUrl}}"> </div>
+  <div class="item-gallery"> <img src="{{plant.pictureUrl}}"> </div>
+  <div class="item-gallery"> <img src="{{plant.pictureUrl}}"> </div>
+  <div class="item-gallery"> <img src="{{plant.pictureUrl}}"> </div>
+</div> <!-- slider-nav.// -->
+</article> <!-- gallery-wrap .end// -->
+		</aside>
+		<aside class="col-sm-7">
+<article class="card-body p-5">
+	<h3 class="title mb-3">{{plant.commonName}}</h3>
+    <h4 class="title mb-3"><i>{{plant.scientificName}}</i></h4>
+
+
+<dl class="item-property">
+  <dt>Description</dt>
+  <dd><p>{{plant.info}}</p></dd>
+</dl>
+<dl class="param param-feature">
+  <dt>Zone</dt>
+  <dd>{{plant.zoneMin}} to {{Oneplant.zoneMax}}</dd>
+</dl>  <!-- item-property-hor .// -->
+<dl class="param param-feature">
+  <dt>Water</dt>
+  <dd>{{#each plant.water}}
+    {{this}}
+    {{/each}}</dd>
+</dl>  <!-- item-property-hor .// -->
+<dl class="param param-feature">
+  <dt>Sun</dt>
+  <dd>{{#each plant.sun}}
+    {{this}}
+    {{/each}}</dd>
+</dl>  <!-- item-property-hor .// -->
+<dl class="param param-feature">
+  <dt>Growth rate</dt>
+  <dd>{{plant.growthRate}}</dd>
+</dl>  <!-- item-property-hor .// -->
+
+<hr>
+	<a href="/center" class="btn btn-lg btn-primary"> Save to favorites </a>
+            <a class="btn btn-lg btn-primary dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Save to Project</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="/plants/save/">{{project._id}}</a>
+            </div>
+	<a href="/plants/{{plant._id}}/save" class="btn btn-lg btn-outline-primary"> <i class="fas fa-shopping-cart"></i> Add to project </a>
+	<a href="/plants" class="btn btn-lg btn-outline-primary"> <i class="fas fa-shopping-cart"></i> Return </a>
+</article> <!-- card-body.// -->
+		</aside> <!-- col.// -->
+	</div> <!-- row.// -->
+</div> <!-- card.// -->
+
+
+</div>
+<!--container.//-->
+
+
+<nav>
+    <a href="/center">Save to favourites</a>
+    <a href="/plants">Return</a>
+    <button><a href="/plants/{{plant._id}}/save">Add to project</a></button>
+</nav>
+
+  </body>
+</html>

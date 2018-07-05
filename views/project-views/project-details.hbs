@@ -1,0 +1,153 @@
+{{!-- <h2>{{project.projectName}}</h2>
+
+<p style="color:brown">Description of the project:</p>
+<p>{{project.projectDescription}}</p> --}}
+
+{{!-- <p style="color:brown">Zone:</p>
+<p>{{project.location}}</p> --}}
+
+{{!-- <p style="color:brown">Plants:</p>
+{{#each project.plants}}
+    <li>{{this}}</li>
+{{/each}} --}}
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h3 class="display-4">{{project.projectName}}</h3>
+      <p class="lead">{{project.projectDescription}}</p>
+      <p>{{project.location}}</p>
+
+      <main role="main" class="inner cover">
+          <a href="/plants" class="btn btn-lg btn-secondary">Add Plants</a>
+      </main>
+
+        <p style="color:brown">Plants:</p>
+        {{#each project.plantArray}}
+    <li>Scientific Name:{{this.scientificName}}</li>
+    <li>Common Name: {{this.commonName}}</li>
+    <li>Type: {{this.plantType}}</li>
+    <button><a href="/plants/{{this._id}}">see details</a></button>
+{{/each}}
+
+</div>
+
+<a href="/center">Return to projects</a>
+
+<!-- Card deck -->
+<div class="card-deck">
+{{#each project.plants}}
+  <!-- Card -->
+  <div class="card mb-4">
+
+    <!--Card image-->
+    <div class="view overlay">
+      <img class="card-img-top" src="{{this.pictureUrl}}" alt="Card image cap">
+      <a href="/plants/{{this}}">
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+
+    <!--Card content-->
+    <div class="card-body">
+
+      <!--Title-->
+      <h5 class="card-title">{{this.commonName}}</h5>
+      <p class="card-title"><i>{{this.scientificName}}</i></p>
+
+      <!--Text-->
+
+      <p class="card-text">{{#each this.plantType}}<p><em>{{this}}</em></p>{{/each}}
+      <a href="/plants/{{this._id}}">see details</a></p>
+      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+      <button type="button" class="btn btn-light-blue btn-md">More info</button>
+    </div>
+  </div>
+  <!-- Card -->
+{{/each}}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- EXAMPLE FROM https://mdbootstrap.com/sections/projects-sections/ --}}
+
+{{!-- <!-- Projects section v.1 -->
+<section class="text-center my-5">
+
+  <!-- Section heading -->
+  <h2 class="h1-responsive font-weight-bold my-5">{{project.projectName}}</h2>
+  <!-- Section description -->
+  <p class="grey-text w-responsive mx-auto mb-5">{{project.projectDescription}}</p>
+
+  <!-- Grid row -->
+  <div class="row text-center">
+
+    <!-- Grid column -->
+    <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+      <!--Featured image-->
+      <div class="view overlay rounded z-depth-1">
+        <img src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" class="img-fluid" alt="Sample project image">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <!--Excerpt-->
+      <div class="card-body pb-0">
+        <h4 class="font-weight-bold my-3">Title of the news</h4>
+        <p class="grey-text">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae.
+        </p>
+        <a class="btn btn-indigo btn-sm"><i class="fa fa-clone left"></i> View project</a>
+      </div>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
+      <!--Featured image-->
+      <div class="view overlay rounded z-depth-1">
+        <img src="https://mdbootstrap.com/img/Photos/Others/project4.jpg" class="img-fluid" alt="Sample project image">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <!--Excerpt-->
+      <div class="card-body pb-0">
+        <h4 class="font-weight-bold my-3">Title of the news</h4>
+        <p class="grey-text">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae.
+        </p>
+        <a class="btn btn-indigo btn-sm"><i class="fa fa-clone left"></i> View project</a>
+      </div>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-4 col-md-6">
+      <!--Featured image-->
+      <div class="view overlay rounded z-depth-1">
+        <img src="https://mdbootstrap.com/img/Photos/Others/images/88.jpg" class="img-fluid" alt="Sample project image">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <!--Excerpt-->
+      <div class="card-body pb-0">
+        <h4 class="font-weight-bold my-3">Title of the news</h4>
+        <p class="grey-text">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae.
+        </p>
+        <a class="btn btn-indigo btn-sm"><i class="fa fa-clone left"></i> View project</a>
+      </div>
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+
+</section>
+<!-- Projects section v.1 --> --}}
