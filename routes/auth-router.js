@@ -31,7 +31,7 @@ authRoutes.post("/process-signup", (req, res, next) => {
     .then((users) => {
         console.log("data saved to DB!");
         req.flash("sucess", "You have logged in!");
-        res.redirect("/");
+        res.redirect("/center");
     })
     .catch((err) => {
         next(err);
