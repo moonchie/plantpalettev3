@@ -25,6 +25,7 @@ const plantSchema = new Schema ({
   pictureUrl: { type: String}
 }, {
   // additional settings for schema here
+
   timestamps: true
 });
 
